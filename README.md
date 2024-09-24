@@ -1,37 +1,53 @@
------------------------------------
+## Penyapu Ranjau
 
-_DISCLAIMER:_
+<!-- ![$(Game Title)](screenshots/screenshot000.png "$(Game Title)") -->
 
-Welcome to **raylib game template**!
+A collection of minesweeper esque games to pass the time
 
-This template provides a base structure to start developing a small raylib game in plain C. The repo is also pre-configured with a default `LICENSE` (zlib/libpng) and a `README.md` (this one) to be properly filled by users. Feel free to change the LICENSE as required.
+<!-- ### Features -->
 
-All the sections defined by `$(Data to Fill)` are expected to be edited and filled properly. It's recommended to delete this disclaimer message after editing this `README.md` file.
+<!--  - $(Game Feature 01) -->
+<!--  - $(Game Feature 02) -->
+<!--  - $(Game Feature 03) -->
 
-This template has been created to be used with raylib (www.raylib.com) and it's licensed under an unmodified zlib/libpng license.
+<!-- ### Controls -->
 
-_Copyright (c) 2014-2024 Ramon Santamaria ([@raysan5](https://twitter.com/raysan5))_
+<!-- Keyboard: -->
+<!--  - $(Game Control 01) -->
+<!--  - $(Game Control 02) -->
+<!--  - $(Game Control 03) -->
 
------------------------------------
-## Getting Started with this template
+<!-- ### Screenshots -->
 
-You can use this templates in some ways. Using Visual Studio, using CMake or make your own build setup. This repository come with Visual Studio and CMake already setuped.
+<!-- _TODO: Show your game to the world, animated GIFs recommended!._ -->
 
-Chose one of the follow setup, that fit in you development enviroment.
+### Developers
 
-### Visual Studio
+ - Ittihadi - Programmer, Artist
+ <!-- - $(Developer 02) - $(Role/Tasks Developed) -->
+ <!-- - $(Developer 03) - $(Role/Tasks Developed) -->
 
-- After extracting the zip, the parent folder `raylib-game-template` should exist in the same directory as `raylib` itself.  So your file structure should look like this:
+<!-- ### Links -->
+
+<!--  - YouTube Gameplay: $(YouTube Link) -->
+<!--  - itch.io Release: $(itch.io Game Page) -->
+<!--  - Steam Release: $(Steam Game Page) -->
+
+### Building
+
+#### Visual Studio
+
+- After extracting the zip or cloning from github, the parent folder `penyapu-ranjau` should exist in the same directory as `raylib`, so the folder structure should look like the following:
     - Some parent directory
+        - `penyapu-ranjau`
+            - This game project directory
         - `raylib`
-            - the contents of https://github.com/raysan5/raylib
-        - `raylib-game-template`
-            - this `README.md` and all other raylib-game-template files
-- If using Visual Studio, open projects/VS2022/raylib-game-template.sln
+            - The contents of https://github.com/raysan5/raylib
+- If using Visual Studio, open `projects/VS2022/raylib-game-template.sln`
 - Select on `raylib_game` in the solution explorer, then in the toolbar at the top, click `Project` > `Set as Startup Project`
 - Now you're all set up!  Click `Local Windows Debugger` with the green play arrow and the project will run.
 
-### CMake
+#### CMake
 
 - Extract the zip of this project
 - Type the follow command:
@@ -50,47 +66,10 @@ cmake --build build
 
 - Inside the build folder are another folder (named the same as the project name on CMakeLists.txt) with the executable and resources folder.
 
-## $(Game Title)
-
-![$(Game Title)](screenshots/screenshot000.png "$(Game Title)")
-
-### Description
-
-$(Your Game Description)
-
-### Features
-
- - $(Game Feature 01)
- - $(Game Feature 02)
- - $(Game Feature 03)
-
-### Controls
-
-Keyboard:
- - $(Game Control 01)
- - $(Game Control 02)
- - $(Game Control 03)
-
-### Screenshots
-
-_TODO: Show your game to the world, animated GIFs recommended!._
-
-### Developers
-
- - $(Developer 01) - $(Role/Tasks Developed)
- - $(Developer 02) - $(Role/Tasks Developed)
- - $(Developer 03) - $(Role/Tasks Developed)
-
-### Links
-
- - YouTube Gameplay: $(YouTube Link)
- - itch.io Release: $(itch.io Game Page)
- - Steam Release: $(Steam Game Page)
-
 ### License
 
 This game sources are licensed under an unmodified zlib/libpng license, which is an OSI-certified, BSD-like license that allows static linking with closed source software. Check [LICENSE](LICENSE) for further details.
 
-$(Additional Licenses)
+<!-- $(Additional Licenses) -->
 
-*Copyright (c) $(Year) $(User Name) ($(User Twitter/GitHub Name))*
+*Copyright (c) 2024 Ittihadi R (ittihadi)*
