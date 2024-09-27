@@ -4,11 +4,12 @@
 
 A collection of minesweeper esque games to pass the time
 
-<!-- ### Features -->
+### Features
 
-<!--  - $(Game Feature 01) -->
-<!--  - $(Game Feature 02) -->
-<!--  - $(Game Feature 03) -->
+ - Multiple game modes, including:
+     - Normal Minesweeper
+     - Hexagon Minesweeper
+ - Playable with keyboard only or mouse only
 
 <!-- ### Controls -->
 
