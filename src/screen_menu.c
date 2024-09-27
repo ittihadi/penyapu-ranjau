@@ -12,6 +12,9 @@ enum MenuItem
 
 static int selectedMenuItem = START;
 
+void MenuScreenLoad(void) {}
+void MenuScreenUnload(void) {}
+
 void MenuScreenUpdate(void)
 {
     // Very rough wraparound code, fix later
@@ -39,6 +42,10 @@ void MenuScreenUpdate(void)
                 gameShouldRun = false;
                 break;
         }
+    }
+    else if (IsKeyPressed(KEY_ESCAPE))
+    {
+        gameShouldRun = false;
     }
 }
 

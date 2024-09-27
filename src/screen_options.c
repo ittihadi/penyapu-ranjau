@@ -1,21 +1,18 @@
 #include "raylib.h"
 #include "screens.h"
 
-void OptionsScreenUpdate()
+void OptionsScreenUpdate(void)
 {
-    if (IsKeyPressed(KEY_BACKSPACE))
+    if (IsKeyPressed(KEY_ESCAPE))
     {
         nextScreen = SCREEN_MENU;
     }
 }
 
-void OptionsScreenDraw()
+void OptionsScreenDraw(void)
 {
     DrawText("Options screen!", 300, 300, 30, BLACK);
 }
 
-// Placeholder here until I implement the screens
-void GameSelectScreenUpdate() {}
-void GameSelectScreenDraw() {}
-void GameScreenUpdate() {}
-void GameScreenDraw() {}
+void OptionsScreenLoad(void) {}
+void OptionsScreenUnload(void) {}

@@ -51,8 +51,11 @@ int main(void)
     // Initialization
     //---------------------------------------------------------
     InitWindow(screenWidth, screenHeight, "Penyapu Ranjau");
+    SetExitKey(KEY_NULL);
 
     InitAudioDevice();     // Initialize audio device
+
+    MenuScreenLoad();
 
 #if defined(PLATFORM_WEB)
     // TODO: This doesn't work with the gameShouldRun variable
@@ -87,7 +90,31 @@ int main(void)
 static void SwitchToNextScreen(void)
 {
     // Add some deinitialization of heavy screen specific data here
+    switch (currentScreen)
+    {
+        case SCREEN_MENU:
+            MenuScreenUnload();
+        case SCREEN_OPTIONS:
+            OptionsScreenUnload();
+        case SCREEN_GAMESELECT:
+            GameSelectScreenUnload();
+        case SCREEN_GAME:
+            GameScreenUnload();
+    }
+
     currentScreen = nextScreen;
+
+    switch (currentScreen)
+    {
+        case SCREEN_MENU:
+            MenuScreenLoad();
+        case SCREEN_OPTIONS:
+            OptionsScreenLoad();
+        case SCREEN_GAMESELECT:
+            GameSelectScreenLoad();
+        case SCREEN_GAME:
+            GameScreenLoad();
+    }
 }
 
 // Update and draw game frame
