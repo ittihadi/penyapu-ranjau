@@ -2,7 +2,7 @@
 
 <!-- ![$(Game Title)](screenshots/screenshot000.png "$(Game Title)") -->
 
-A collection of minesweeper esque games to pass the time
+A collection of minesweeper games to pass the time made using the raylib framework
 
 ### Features
 
@@ -11,12 +11,17 @@ A collection of minesweeper esque games to pass the time
      - Hexagon Minesweeper
  - Playable with keyboard only or mouse only
 
-<!-- ### Controls -->
+### Controls
 
-<!-- Keyboard: -->
-<!--  - $(Game Control 01) -->
-<!--  - $(Game Control 02) -->
-<!--  - $(Game Control 03) -->
+Mouse:
+ - Left Mouse Button to reveal the hovered cell
+ - Right Mouse Button to flag the hovered cell
+ - Middle Mouse Button to check the hovered cell
+
+Keyboard:
+ - Arrow Keys to move around pointer
+ - Z to reveal hovered cell
+ - X to flag hovered cell
 
 <!-- ### Screenshots -->
 
@@ -50,8 +55,8 @@ A collection of minesweeper esque games to pass the time
 
 #### CMake
 
-- Extract the zip of this project
-- Type the follow command:
+- Clone or download and extract the zip of this project
+- Type the following command in the project root folder:
 
 ```sh
 cmake -S . -B build
@@ -59,13 +64,13 @@ cmake -S . -B build
 
 > if you want with debug symbols put the flag `-DCMAKE_BUILD_TYPE=Debug`
 
-- After CMake config you project build:
+- After CMake configures you project, build it with:
 
 ```sh
 cmake --build build
 ```
 
-- Inside the build folder are another folder (named the same as the project name on CMakeLists.txt) with the executable and resources folder.
+- Inside the build folder is another folder named `penyapu-ranjau` containing the executable and resources folder.
 
 ### License
 
