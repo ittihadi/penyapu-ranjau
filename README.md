@@ -64,7 +64,7 @@ cmake -S . -B build
 
 > if you want with debug symbols put the flag `-DCMAKE_BUILD_TYPE=Debug`
 
-- After CMake configures you project, build it with:
+- After CMake configures the project, build it with:
 
 ```sh
 cmake --build build
