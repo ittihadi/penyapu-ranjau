@@ -18,16 +18,12 @@ void MenuScreenUnload(void) {}
 void MenuScreenUpdate(void)
 {
     // Very rough wraparound code, fix later
+    // // Still very rought but hey, both are one liners now
     if (IsKeyPressed(KEY_DOWN))
-    {
         selectedMenuItem = (selectedMenuItem + 1) % MENU_ITEM_COUNT;
-    }
     else if (IsKeyPressed(KEY_UP))
-    {
-        selectedMenuItem--;
-        if (selectedMenuItem < 0)
-            selectedMenuItem += MENU_ITEM_COUNT;
-    }
+        selectedMenuItem = (selectedMenuItem + MENU_ITEM_COUNT - 1) % MENU_ITEM_COUNT;
+
     else if (IsKeyPressed(KEY_ENTER))
     {
         switch (selectedMenuItem)
