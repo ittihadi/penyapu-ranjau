@@ -19,9 +19,10 @@ void GameSelectScreenLoad(void)
 {
     selectedGame = 0;
 
+    // Dynamically allocate because it's a bunch of strings
     games    = (GameOption*)malloc(gameCount * sizeof(GameOption));
     games[0] = (GameOption){
-        .title       = "Standard Minesweeper",
+        .title       = "Classic Minesweeper",
         .description = "Minesweeper like it's most commonly done"};
     games[1] = (GameOption){
         .title       = "Hexa Minesweeper",
@@ -36,30 +37,23 @@ void GameSelectScreenUnload(void)
 void GameSelectScreenUpdate(void)
 {
     if (IsKeyPressed(KEY_ESCAPE))
-    {
         nextScreen = SCREEN_MENU;
-    }
     else if (IsKeyPressed(KEY_ENTER))
     {
         nextScreen = SCREEN_GAME;
     }
+
     else if (IsKeyPressed(KEY_DOWN))
-    {
         selectedGame = (selectedGame + 1) % gameCount;
-    }
     else if (IsKeyPressed(KEY_UP))
-    {
-        selectedGame--;
-        if (selectedGame < 0)
-            selectedGame = gameCount;
-    }
+        selectedGame = (selectedGame + gameCount - 1) % gameCount;
 }
 
 void GameSelectScreenDraw(void)
 {
     for (size_t i = 0; i < gameCount; ++i)
     {
-        DrawText(games[i].title, 100 + (selectedGame == i ? 10 : 0), 100 + 100 * i, 30, BLACK);
-        DrawText(games[i].description, 100 + (selectedGame == i ? 10 : 0), 130 + 100 * i, 20, BLACK);
+        DrawText(games[i].title, selectedGame == i ? 110 : 100, 100 + 100 * i, 30, BLACK);
+        DrawText(games[i].description, selectedGame == i ? 110 : 100, 130 + 100 * i, 20, BLACK);
     }
 }
