@@ -1,6 +1,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 
+#include "games.h"
 #include "raylib.h"
 #include "screens.h"
 
@@ -40,7 +41,18 @@ void GameSelectScreenUpdate(void)
         nextScreen = SCREEN_MENU;
     else if (IsKeyPressed(KEY_ENTER))
     {
-        nextScreen = SCREEN_GAME;
+        nextScreen      = SCREEN_GAME;
+        currentGameType = (PR_GameType)selectedGame;
+        switch (currentGameType)
+        {
+            case GAME_CLASSIC:
+                currentGameParams.classicGame.width  = 10;
+                currentGameParams.classicGame.height = 8;
+                break;
+            case GAME_HEXA:
+                currentGameParams.hexaGame.sideLength = 6;
+                break;
+        }
     }
 
     else if (IsKeyPressed(KEY_DOWN))
