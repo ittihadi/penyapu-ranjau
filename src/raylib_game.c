@@ -14,6 +14,7 @@
  ********************************************************************************************/
 
 #include "globals.h"
+#include "options.h"
 #include "raylib.h"
 #include "screens.h"
 
@@ -50,10 +51,15 @@ int main(void)
 {
     // Initialization
     //---------------------------------------------------------
+    LoadOptions();
+
     InitWindow(screenWidth, screenHeight, "Penyapu Ranjau");
     SetExitKey(KEY_NULL);
 
+    if (isFullscreen) ToggleFullscreen();
+
     InitAudioDevice();     // Initialize audio device
+    SetMasterVolume(masterVolume);
 
     MenuScreenLoad();
 
