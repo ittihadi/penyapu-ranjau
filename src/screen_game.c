@@ -30,9 +30,9 @@ static void (*GetNeighborsToBuffer)(size_t cellIndex);
 static void (*Draw)(void);
 
 static void StandardGameDraw(void);
-static void StandardGameGetNeighborss(size_t cellIndex);
+static void StandardGameGetNeighbors(size_t cellIndex);
 static void HexaGameDraw(void);
-static void HexaGameGetNeighborss(size_t cellIndex);
+static void HexaGameGetNeighbors(size_t cellIndex);
 
 void GameScreenUpdate(void)
 {
@@ -68,7 +68,7 @@ void GameScreenLoad(void)
             neighborCount = 8;
             cellCount     = currentGameParams.classicGame.width * currentGameParams.classicGame.height;
 
-            GetNeighborsToBuffer = StandardGameGetNeighborss;
+            GetNeighborsToBuffer = StandardGameGetNeighbors;
             Draw                 = StandardGameDraw;
             break;
 
@@ -81,7 +81,7 @@ void GameScreenLoad(void)
                 cellCount += 2 * (i + currentGameParams.hexaGame.sideLength);
             cellCount -= (2 * currentGameParams.hexaGame.sideLength) - 1;
 
-            GetNeighborsToBuffer = HexaGameGetNeighborss;
+            GetNeighborsToBuffer = HexaGameGetNeighbors;
             Draw                 = HexaGameDraw;
             break;
     }
@@ -108,7 +108,7 @@ static void StandardGameDraw(void)
     DrawText("Standard Game!", 0, 0, 20, BLACK);
 }
 
-static void StandardGameGetNeighborss(size_t cellIndex)
+static void StandardGameGetNeighbors(size_t cellIndex)
 {
 }
 
@@ -117,6 +117,6 @@ static void HexaGameDraw(void)
     DrawText("Hex Game!", 0, 0, 20, BLUE);
 }
 
-static void HexaGameGetNeighborss(size_t cellIndex)
+static void HexaGameGetNeighbors(size_t cellIndex)
 {
 }
