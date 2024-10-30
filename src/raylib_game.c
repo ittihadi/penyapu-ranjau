@@ -63,10 +63,6 @@ int main(void)
 
     MenuScreenLoad();
 
-#if defined(PLATFORM_WEB)
-    // TODO: This doesn't work with the gameShouldRun variable
-    emscripten_set_main_loop(UpdateDrawFrame, 60, 1);
-#else
     SetTargetFPS(60);     // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
 
@@ -75,7 +71,6 @@ int main(void)
     {
         UpdateDrawFrame();
     }
-#endif
 
     // De-Initialization
     //--------------------------------------------------------------------------------------
