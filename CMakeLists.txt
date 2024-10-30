@@ -42,6 +42,7 @@ add_custom_command(
 #set(raylib_VERBOSE 1)
 target_link_libraries(${PROJECT_NAME} raylib)
 
+target_include_directories(${PROJECT_NAME} PRIVATE src)
 
 # Checks if OSX and links appropriate frameworks (Only required on MacOS)
 if (APPLE)

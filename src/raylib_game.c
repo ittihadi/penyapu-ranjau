@@ -16,7 +16,7 @@
 #include "globals.h"
 #include "options.h"
 #include "raylib.h"
-#include "screens.h"
+#include "screens/screens.h"
 
 #if defined(PLATFORM_WEB)
 #include <emscripten/emscripten.h>
