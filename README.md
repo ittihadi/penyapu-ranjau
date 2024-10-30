@@ -19,7 +19,7 @@ Mouse:
  - Middle Mouse Button to check the hovered cell
 
 Keyboard:
- - Arrow Keys to move around pointer
+ - Arrow Keys to move around selection
  - Z to reveal hovered cell
  - X to flag hovered cell
 
