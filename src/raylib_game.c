@@ -6,21 +6,18 @@
  *   A collection of minesweeper-type games
  *
  *   This game has been created using raylib (www.raylib.com)
- *   raylib is licensed under an unmodified zlib/libpng license (View raylib.h
- *for details)
+ *   raylib is licensed under an unmodified zlib/libpng license (View raylib.h *for details)
  *
  *   Copyright (c) 2021 Ramon Santamaria (@raysan5)
  *
  ********************************************************************************************/
 
+#include <stdio.h>
+
 #include "globals.h"
 #include "options.h"
 #include "raylib.h"
 #include "screens/screens.h"
-
-#if defined(PLATFORM_WEB)
-#include <emscripten/emscripten.h>
-#endif
 
 //----------------------------------------------------------------------------------
 // Shared Variables Definition (global)
@@ -58,6 +55,7 @@ int main(void)
     InitWindow(screenWidth, screenHeight, "Penyapu Ranjau");
     SetExitKey(KEY_NULL);
 
+    // Set to fullscreen based on option
     if (isFullscreen) ToggleFullscreen();
 
     InitAudioDevice();     // Initialize audio device
@@ -77,6 +75,21 @@ int main(void)
     // De-Initialization
     //--------------------------------------------------------------------------------------
     // Unload current screen data before closing
+    switch (currentScreen)
+    {
+        case SCREEN_MENU:
+            MenuScreenUnload();
+            break;
+        case SCREEN_OPTIONS:
+            OptionsScreenUnload();
+            break;
+        case SCREEN_GAMESELECT:
+            GameSelectScreenUnload();
+            break;
+        case SCREEN_GAME:
+            GameScreenUnload();
+            break;
+    }
 
     CloseAudioDevice();     // Close audio context
 
@@ -97,12 +110,16 @@ static void SwitchToNextScreen(void)
     {
         case SCREEN_MENU:
             MenuScreenUnload();
+            break;
         case SCREEN_OPTIONS:
             OptionsScreenUnload();
+            break;
         case SCREEN_GAMESELECT:
             GameSelectScreenUnload();
+            break;
         case SCREEN_GAME:
             GameScreenUnload();
+            break;
     }
 
     currentScreen = nextScreen;
@@ -111,12 +128,16 @@ static void SwitchToNextScreen(void)
     {
         case SCREEN_MENU:
             MenuScreenLoad();
+            break;
         case SCREEN_OPTIONS:
             OptionsScreenLoad();
+            break;
         case SCREEN_GAMESELECT:
             GameSelectScreenLoad();
+            break;
         case SCREEN_GAME:
             GameScreenLoad();
+            break;
     }
 }
 
