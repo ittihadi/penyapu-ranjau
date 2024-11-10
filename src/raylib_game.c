@@ -51,6 +51,8 @@ int main(void)
 {
     // Initialization
     //---------------------------------------------------------
+    ChangeDirectory(GetApplicationDirectory());
+
     LoadOptions();
 
     InitWindow(screenWidth, screenHeight, "Penyapu Ranjau");

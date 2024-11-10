@@ -10,10 +10,18 @@ enum MenuItem
     MENU_ITEM_COUNT,
 };
 
-static int selectedMenuItem = START;
+static int       selectedMenuItem = START;
+static Texture2D backgroundTex;
 
-void MenuScreenLoad(void) {}
-void MenuScreenUnload(void) {}
+void MenuScreenLoad(void)
+{
+    // backgroundTex = LoadTexture("menuBG.png");
+}
+
+void MenuScreenUnload(void)
+{
+    // UnloadTexture(backgroundTex);
+}
 
 void MenuScreenUpdate(void)
 {
@@ -47,10 +55,7 @@ void MenuScreenUpdate(void)
 
 void MenuScreenDraw(void)
 {
-    // draw menu
-    int selectedItemX = 110;
-
-    DrawText("Start", selectedMenuItem == START ? selectedItemX : 100, 270, 30, BLACK);
-    DrawText("Options", selectedMenuItem == OPTIONS ? selectedItemX : 100, 310, 30, BLACK);
-    DrawText("Quit", selectedMenuItem == EXIT ? selectedItemX : 100, 350, 30, BLACK);
+    DrawText("Start", selectedMenuItem == START ? 110 : 100, 270, 30, BLACK);
+    DrawText("Options", selectedMenuItem == OPTIONS ? 110 : 100, 310, 30, BLACK);
+    DrawText("Quit", selectedMenuItem == EXIT ? 110 : 100, 350, 30, BLACK);
 }
